@@ -6,8 +6,17 @@
 <title>Sciatica Relief Exercises</title>
 <style>
   body{margin:0;padding:0;background:#f8f9fa;font-family:system-ui,-apple-system,sans-serif;color:#333}
-  .carousel{max-width:1100px;margin:20px auto;background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.15);overflow:hidden}
 
+.carousel{
+  width:100vw;           /* ← THIS IS THE FIX */
+  max-width:none;        /* remove the old limit */
+  margin:20px auto;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 12px 40px rgba(0,0,0,.15);
+  overflow:hidden;
+  position:relative;     /* helps with layering */
+}
   /* ←←← THIS IS THE KEY CHANGE →→→ */
   .slide{
     display:none;
@@ -34,6 +43,7 @@ video{
   margin: 0 auto;
   box-shadow: 0 8px 30px rgba(0,0,0,.4);
 }
+
 
   .nav-buttons{
     margin:30px auto 10px;
@@ -178,5 +188,6 @@ function handleSwipe() {
   
 </body>
 </html>
+
 
 
