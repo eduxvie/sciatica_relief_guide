@@ -6,27 +6,61 @@
 <title>Sciatica Relief Exercises</title>
 <style>
   body{margin:0;padding:0;background:#f8f9fa;font-family:system-ui,-apple-system,sans-serif;color:#333}
-  .carousel{max-width:1100px;margin:30px auto;position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.15);background:#fff}
-  .slide{display:none;text-align:center;padding:40px 20px}
-  .slide.active{display:block}
-  video{width:100%;max-width:560px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.22);margin:20px 0}
-  h2{font-size:2.3rem;margin:15px 0;color:#2c3e50}
-  .details{max-width:640px;margin:20px auto;line-height:1.7;font-size:1.1rem}
+  .carousel{max-width:1100px;margin:20px auto;background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.15);overflow:hidden}
+
+  /* ←←← THIS IS THE KEY CHANGE →→→ */
+  .slide{
+    display:none;
+    text-align:center;
+    padding:30px 15px 45px;
+    min-height:100vh;           /* forces full viewport height */
+    box-sizing:border-box;
+    flex-direction:column;
+    justify-content:center;     /* vertically centers everything */
+  }
+  .slide.active{display:flex}
+
+  h2{font-size:2.1rem;margin:10px 0 15px;color:#2c3e50}
+  .details{max-width:640px;margin:15px auto;line-height:1.65;font-size:1.05rem}
   .details strong{color:#3498db}
 
-  /* Centered blue buttons below text */
-  .nav-buttons{margin:30px auto 10px;display:flex;justify-content:center;gap:25px}
-  .nav-btn{background:#3498db;color:#fff;border:none;width:56px;height:56px;border-radius:50%;font-size:1.8rem;cursor:pointer;box-shadow:0 5px 15px rgba(52,152,219,.4);transition:.2s}
+  /* Responsive video – perfect size everywhere */
+  video{
+    width:100%;
+    max-width:clamp(540px, 86vw, 900px);
+    height:auto;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    display:block;
+    margin:15px auto;
+  }
+
+  .nav-buttons{
+    margin:30px auto 10px;
+    display:flex;
+    justify-content:center;
+    gap:28px;
+  }
+  .nav-btn{
+    background:#3498db;color:#fff;border:none;
+    width:56px;height:56px;border-radius:50%;font-size:1.8rem;
+    cursor:pointer;box-shadow:0 5px 18px rgba(52,152,219,.5);transition:.2s
+  }
   .nav-btn:hover{background:#2980b9;transform:scale(1.08)}
   .nav-btn:active{transform:scale(0.95)}
-  @media(max-width:480px){.nav-btn{width:50px;height:50px;font-size:1.5rem}}
+
+  @media (max-width:480px){
+    .slide{padding:20px 10px 40px}
+    h2{font-size:1.9rem}
+    .nav-btn{width:52px;height:52px;font-size:1.6rem}
+  }
 </style>
 </head>
 <body>
 
 <div class="carousel">
 
-  <div class="slide active">
+  <div class="slide active" style="display:flex">   <!-- first slide -->
     <h2>1. Pelvic Tilt</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/7y8q2r.jpg">
       <source src="media/1_Pelvic_tilt_man.mp4" type="video/mp4">
@@ -35,7 +69,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>2. Knee to Chest</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/3n5i9p.jpg">
       <source src="media/2_Knee_to_chest_stretch_man.mp4" type="video/mp4">
@@ -44,7 +78,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>3. Supine Figure-4 Piriformis Stretch</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/k4p8m1.jpg">
       <source src="media/3_Supine_man.mp4" type="video/mp4">
@@ -53,7 +87,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>4. Child’s Pose</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/x2v7h9.jpg">
       <source src="media/4_Child_pose_man.mp4" type="video/mp4">
@@ -62,7 +96,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>5. Cat-Cow</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
       <source src="media/5_Cat_Cow_Stretch_man.mp4" type="video/mp4">
@@ -71,7 +105,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>6. Glute Bridge</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/r5e8u2.jpg">
       <source src="media/6_Glute_bridge_woman.mp4" type="video/mp4">
@@ -80,7 +114,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>7. Seated Spinal Twist</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/m6h3j9.jpg">
       <source src="media/7_Seated_Spinal_Twist_man.mp4" type="video/mp4">
@@ -89,7 +123,7 @@
     <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <div class="slide">
+  <div class="slide" style="display:none">
     <h2>8. Standing Hamstring Stretch</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/w1q4z7.jpg">
       <source src="media/8_Hamstring-stretch_man.mp4" type="video/mp4">
@@ -117,3 +151,4 @@
 </script>
 </body>
 </html>
+
