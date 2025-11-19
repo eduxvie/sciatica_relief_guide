@@ -1,193 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sciatica Relief Exercises</title>
-<style>
-  body{margin:0;padding:0;background:#f8f9fa;font-family:system-ui,-apple-system,sans-serif;color:#333}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Gentle Sciatica Relief Exercises</title>
+    <meta name="description"
+        content="Follow along with these 8 proven exercises to relieve sciatica pain in minutes. No equipment needed.">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f172a;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #e2e8f0;
+            overflow-x: hidden
+        }
 
-.carousel{
-  width:100vw;           /* ← THIS IS THE FIX */
-  max-width:none;        /* remove the old limit */
-  margin:20px auto;
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 12px 40px rgba(0,0,0,.15);
-  overflow:hidden;
-  position:relative;     /* helps with layering */
-}
-  /* ←←← THIS IS THE KEY CHANGE →→→ */
-  .slide{
-    display:none;
-    text-align:center;
-    padding:30px 15px 45px;
-    min-height:100vh;           /* forces full viewport height */
-    box-sizing:border-box;
-    flex-direction:column;
-    justify-content:center;     /* vertically centers everything */
-  }
-  .slide.active{display:flex}
+        .carousel {
+            width: 100vw;
+            max-width: none;
+            margin: 0;
+            background: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  h2{font-size:2.1rem;margin:10px 0 15px;color:#2c3e50}
-  .details{max-width:640px;margin:15px auto;line-height:1.65;font-size:1.05rem}
-  .details strong{color:#3498db}
+        .slide {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px 15px 40px;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
 
-  /* Responsive video – perfect size everywhere */
-video{
-  width: 100vw;
-  max-width: 480px;
-  height: calc(100vh - 220px);
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;    /* rounded only on top like TikTok */
-  margin: 0 auto;
-  box-shadow: 0 8px 30px rgba(0,0,0,.4);
-}
+        .slide.active {
+            display: flex
+        }
 
+        h2 {
+            font-size: 2rem;
+            margin: 15px 0 10px;
+            color: #60a5fa;
+            text-align: center;
+        }
 
-  .nav-buttons{
-    margin:30px auto 10px;
-    display:flex;
-    justify-content:center;
-    gap:28px;
-  }
-  .nav-btn{
-    background:#3498db;color:#fff;border:none;
-    width:56px;height:56px;border-radius:50%;font-size:1.8rem;
-    cursor:pointer;box-shadow:0 5px 18px rgba(52,152,219,.5);transition:.2s
-  }
-  .nav-btn:hover{background:#2980b9;transform:scale(1.08)}
-  .nav-btn:active{transform:scale(0.95)}
+        .details {
+            max-width: 90%;
+            margin: 12px auto 25px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
 
-  @media (max-width:480px){
-    .slide{padding:20px 10px 40px}
-    h2{font-size:1.9rem}
-    .nav-btn{width:52px;height:52px;font-size:1.6rem}
-  }
-</style>
+        .details strong {
+            color: #93c5fd
+        }
+
+        video {
+            width: 100vw;
+            max-width: 480px;
+            height: calc(100vh - 260px);
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
+            background: #000;
+        }
+
+        .nav-buttons {
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .nav-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            font-size: 2rem;
+            /* this controls arrow size */
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, .5);
+            transition: all .2s;
+        }
+
+        .nav-btn:hover {
+            background: #2563eb;
+            transform: scale(1.1)
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95)
+        }
+
+        @media (max-width:480px) {
+            h2 {
+                font-size: 1.8rem
+            }
+
+            .details {
+                font-size: 1.05rem
+            }
+
+            video {
+                height: calc(100vh - 240px)
+            }
+
+            .nav-btn {
+                width: 56px;
+                height: 56px;
+                font-size: 1.8rem
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="carousel">
+    <div class="carousel">
 
-  <div class="slide active" style="display:flex">   <!-- first slide -->
-    <h2>1. Pelvic Tilt</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/7y8q2r.jpg">
-      <source src="media/1_Pelvic_tilt_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>Beginner • 10–15 reps</strong><br>Lie on back → gently flatten lower back → release.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide active">
+            <h2>1. Pelvic Tilt</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/1_Pelvic_tilt_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>Beginner • 10–15 reps</strong><br>Lie on back → gently flatten lower back → release.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>2. Knee to Chest</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/3n5i9p.jpg">
-      <source src="media/2_Knee_to_chest_stretch_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>20–30s each side</strong><br>Gentle lumbar decompression + glute stretch.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>2. Knee to Chest</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/2_Knee_to_chest_stretch_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>20–30s each side</strong><br>Gentle lumbar decompression + glute stretch.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>3. Supine Figure-4 Piriformis Stretch</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/k4p8m1.jpg">
-      <source src="media/3_Supine_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>30–60s each side</strong><br>Targets the piriformis muscle directly.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>3. Supine Figure-4</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/3_Supine_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>30–60s each side</strong><br>Targets the piriformis muscle directly.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>4. Child’s Pose</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/x2v7h9.jpg">
-      <source src="media/4_Child_pose_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>30–90s</strong><br>Spinal traction and deep relaxation.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>4. Child’s Pose</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/4_Child_pose_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>30–90s</strong><br>Spinal traction and deep relaxation.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>5. Cat-Cow</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
-      <source src="media/5_Cat_Cow_Stretch_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>8–10 breaths</strong><br>Improves spinal mobility.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>5. Cat-Cow</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/5_Cat_Cow_Stretch_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>8–10 breaths</strong><br>Improves spinal mobility.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>6. Glute Bridge</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/r5e8u2.jpg">
-      <source src="media/6_Glute_bridge_woman.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>10–15 reps</strong><br>Strengthens glutes & core.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>6. Glute Bridge</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/6_Glute_bridge_woman.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>10–15 reps</strong><br>Strengthens glutes & core.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>7. Seated Spinal Twist</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/m6h3j9.jpg">
-      <source src="media/7_Seated_Spinal_Twist_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>20–30s each side</strong><br>Releases lumbar tension.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>7. Seated Spinal Twist</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/7_Seated_Spinal_Twist_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>20–30s each side</strong><br>Releases lumbar tension.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-  <div class="slide" style="display:none">
-    <h2>8. Standing Hamstring Stretch</h2>
-    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/w1q4z7.jpg">
-      <source src="media/8_Hamstring-stretch_man.mp4" type="video/mp4">
-    </video>
-    <div class="details"><p><strong>20–30s each leg</strong><br>Lengthens tight hamstrings.</p></div>
-    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
-  </div>
+        <div class="slide">
+            <h2>8. Standing Hamstring Stretch</h2>
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+                <source src="media/8_Hamstring-stretch_man.mp4" type="video/mp4">
+            </video>
+            <div class="details">
+                <p><strong>20–30s each leg</strong><br>Lengthens tight hamstrings.</p>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
+            </div>
+        </div>
 
-</div>
+    </div>
 
-<script>
-  let current = 0;
-  const slides = document.querySelectorAll('.slide');
-  function showSlide(n) {
-    slides[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-  }
-  function prevSlide() { showSlide(current - 1); }
-  function nextSlide() { showSlide(current + 1); }
-  document.onkeydown = e => {
-    if (e.key === 'ArrowLeft') prevSlide();
-    if (e.key === 'ArrowRight') nextSlide();
-  };
-</script>
-<script>
-// Touch swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
+    <script>
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
 
-const carousel = document.querySelector('.carousel');
+        function showSlide(n) {
+            slides[current].classList.remove('active');
+            current = (n + slides.length) % slides.length;
+            slides[current].classList.add('active');
+        }
+        function prevSlide() { showSlide(current - 1); }
+        function nextSlide() { showSlide(current + 1); }
 
-carousel.addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
+        // Keyboard
+        document.onkeydown = e => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        };
 
-carousel.addEventListener('touchend', e => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-}, { passive: true });
-
-function handleSwipe() {
-  const swipeThreshold = 50; // minimum pixels to count as swipe
-  if (touchEndX < touchStartX - swipeThreshold) {
-    nextSlide();      // swipe left → next
-  }
-  if (touchEndX > touchStartX + swipeThreshold) {
-    prevSlide();      // swipe right → previous
-  }
-}
-</script>
-  
+        // Touch swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+        document.querySelector('.carousel').addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        document.querySelector('.carousel').addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }, { passive: true });
+    </script>
 </body>
+
 </html>
-
-
-
