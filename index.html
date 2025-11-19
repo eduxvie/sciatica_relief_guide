@@ -9,84 +9,110 @@
   .carousel{max-width:1100px;margin:30px auto;position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.15);background:#fff}
   .slide{display:none;text-align:center;padding:40px 20px}
   .slide.active{display:block}
-  video{width:100%;max-width:720px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.22);margin:20px 0}
-  h2{font-size:2.2rem;margin:10px 0;color:#2c3e50}
+  video{width:100%;max-width:560px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.22);margin:20px 0}
+  h2{font-size:2.3rem;margin:15px 0;color:#2c3e50}
   .details{max-width:640px;margin:20px auto;line-height:1.7;font-size:1.1rem}
   .details strong{color:#3498db}
 
-  /* New centered blue buttons below the text */
-  .nav-buttons {
-    margin:30px auto 10px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-  }
-  .nav-btn {
-    background:#3498db;
-    color:white;
-    border:none;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    font-size:1.6rem;
-    cursor:pointer;
-    box-shadow:0 4px 15px rgba(52,152,219,.4);
-    transition:all .2s;
-  }
-  .nav-btn:hover {background:#2980b9;transform:scale(1.05)}
-  .nav-btn:active {transform:scale(0.95)}
-
-  @media (max-width:480px){
-    .nav-btn{width:48px;height:48px;font-size:1.4rem}
-    .nav-buttons{gap:15px}
-  }
+  /* Centered blue buttons below text */
+  .nav-buttons{margin:30px auto 10px;display:flex;justify-content:center;gap:25px}
+  .nav-btn{background:#3498db;color:#fff;border:none;width:56px;height:56px;border-radius:50%;font-size:1.8rem;cursor:pointer;box-shadow:0 5px 15px rgba(52,152,219,.4);transition:.2s}
+  .nav-btn:hover{background:#2980b9;transform:scale(1.08)}
+  .nav-btn:active{transform:scale(0.95)}
+  @media(max-width:480px){.nav-btn{width:50px;height:50px;font-size:1.5rem}}
 </style>
 </head>
 <body>
 
 <div class="carousel">
+
   <div class="slide active">
     <h2>1. Pelvic Tilt</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/7y8q2r.jpg">
       <source src="media/1_Pelvic_tilt_man.mp4" type="video/mp4">
     </video>
     <div class="details"><p><strong>Beginner • 10–15 reps</strong><br>Lie on back → gently flatten lower back → release.</p></div>
-    <div class="nav-buttons">
-      <button class="nav-btn" id="prev">◄</button>
-      <button class="nav-btn" id="next">►</button>
-    </div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
   <div class="slide">
     <h2>2. Knee to Chest</h2>
     <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/3n5i9p.jpg">
-      <source src="media/2_Knee_to_chest_man.mp4" type="video/mp4">
+      <source src="media/2_Knee_to_chest_stretch_man.mp4" type="video/mp4">
     </video>
     <div class="details"><p><strong>20–30s each side</strong><br>Gentle lumbar decompression + glute stretch.</p></div>
-    <div class="nav-buttons">
-      <button class="nav-btn" id="prev">◄</button>
-      <button class="nav-btn" id="next">►</button>
-    </div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
   </div>
 
-  <!-- Repeat the same pattern for slides 3–8 (I’ll give you the full code in 2 seconds if you want) -->
-  <!-- Or just copy-paste the block above and change number, video src, and text -->
+  <div class="slide">
+    <h2>3. Supine Figure-4 Piriformis Stretch</h2>
+    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/k4p8m1.jpg">
+      <source src="media/3_Supine_man.mp4" type="video/mp4">
+    </video>
+    <div class="details"><p><strong>30–60s each side</strong><br>Targets the piriformis muscle directly.</p></div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
+  </div>
+
+  <div class="slide">
+    <h2>4. Child’s Pose</h2>
+    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/x2v7h9.jpg">
+      <source src="media/4_Child_pose_man.mp4" type="video/mp4">
+    </video>
+    <div class="details"><p><strong>30–90s</strong><br>Spinal traction and deep relaxation.</p></div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
+  </div>
+
+  <div class="slide">
+    <h2>5. Cat-Cow</h2>
+    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+      <source src="media/5_Cat_Cow_Stretch_man.mp4" type="video/mp4">
+    </video>
+    <div class="details"><p><strong>8–10 breaths</strong><br>Improves spinal mobility.</p></div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
+  </div>
+
+  <div class="slide">
+    <h2>6. Glute Bridge</h2>
+    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/r5e8u2.jpg">
+      <source src="media/6_Glute_bridge_woman.mp4" type="video/mp4">
+    </video>
+    <div class="details"><p><strong>10–15 reps</strong><br>Strengthens glutes & core.</p></div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
+  </div>
+
+  <div class="slide">
+    <h2>7. Seated Spinal Twist</h2>
+    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/m6h3j9.jpg">
+      <source src="media/7_Seated_Spinal_Twist_man.mp4" type="video/mp4">
+    </video>
+    <div class="details"><p><strong>20–30s each side</strong><br>Releases lumbar tension.</p></div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
+  </div>
+
+  <div class="slide">
+    <h2>8. Standing Hamstring Stretch</h2>
+    <video controls autoplay muted loop playsinline poster="https://files.catbox.moe/w1q4z7.jpg">
+      <source src="media/8_Hamstring-stretch_man.mp4" type="video/mp4">
+    </video>
+    <div class="details"><p><strong>20–30s each leg</strong><br>Lengthens tight hamstrings.</p></div>
+    <div class="nav-buttons"><button class="nav-btn" onclick="prevSlide()">◄</button><button class="nav-btn" onclick="nextSlide()">►</button></div>
+  </div>
 
 </div>
 
 <script>
-  let i = 0;
+  let current = 0;
   const slides = document.querySelectorAll('.slide');
-  document.getElementById('prev').onclick = () => show((i - 1 + slides.length) % slides.length);
-  document.getElementById('next').onclick = () => show((i + 1) % slides.length);
-  function show(n) {
-    slides[i].classList.remove('active');
-    i = n;
-    slides[i].classList.add('active');
+  function showSlide(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
   }
+  function prevSlide() { showSlide(current - 1); }
+  function nextSlide() { showSlide(current + 1); }
   document.onkeydown = e => {
-    if (e.key === 'ArrowLeft') show((i - 1 + slides.length) % slides.length);
-    if (e.key === 'ArrowRight') show(i + 1);
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
   };
 </script>
 </body>
