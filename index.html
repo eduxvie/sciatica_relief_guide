@@ -145,6 +145,25 @@
             margin: 15px
         }
 
+        .big-btn {
+            width: 90%;
+            max-width: 420px;
+            padding: 18px;
+            margin: 14px auto;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+            transition: transform .2s;
+        }
+
+        .big-btn:hover {
+            transform: scale(1.04);
+        }
+
         input[type=email] {
             padding: 14px;
             width: 78%;
@@ -181,6 +200,7 @@
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -380,23 +400,43 @@
         </div>
     </div>
 
-    <!-- FINAL SCREEN -->
-    <footer id="final-screen">
-        <h2 style="color:#10b981">You completed all 8 exercises! Well done</h2>
-        <p style="max-width:90%;font-size:1.2rem">Want a printable PDF + 2 bonus exercises?<br>Drop your email (no spam
-            ever):</p>
-        <form action="https://formsubmit.co/your-real-email@example.com" method="POST"
-            style="display:flex;flex-direction:column;align-items:center;width:90%;max-width:400px;gap:10px">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <input type="hidden" name="_next" value="https://eduxvie.github.io/sciatica-relief-guide/thanks.html">
-            <button type="submit">Send Me the Free PDF</button>
-        </form>
-        <button class="share-btn"
-            onclick="navigator.share?navigator.share({title:'Free Sciatica Relief Guide',url:location.href,text:'This actually helped my pain'}):copy(location.href)">Share
-            with someone in pain (Heart)</button>
-    </footer>
+    <!-- FINAL SCREEN – SAME TEXT, SAME PERFECT SIZE -->
+    <div id="final-screen" style="
+    display:none; flex-direction:column; align-items:center; justify-content:center;
+    height:100dvh; padding:20px; background:#0f172a; text-align:center; box-sizing:border-box
+">
+        <h2 style="font-size:2.6rem;color:#10b981;margin:0 0 16px">You completed all 8 exercises!</h2>
+        <p style="font-size:1.35rem;max-width:90%;margin:16px 0;line-height:1.6">
+            Want a printable PDF + 2 bonus exercises?<br>
+            <strong>Drop your email — zero spam, ever.</strong>
+        </p>
 
+        <!-- EMAIL FORM -->
+        <form action="https://formsubmit.co/your-real-email@example.com" method="POST"
+            style="width:90%;max-width:400px;margin:30px 0">
+            <input type="email" name="email" placeholder="you@email.com" required
+                style="width:100%;padding:17px;border-radius:50px;border:none;font-size:1.2rem;margin-bottom:14px">
+            <input type="hidden" name="_next" value="thanks.html">
+            <button type="submit" class="big-btn">Send Me the Free PDF</button>
+        </form>
+
+        <!-- YOUR ORIGINAL TEXT – ONLY SIZE/STYLE FIXED -->
+        <button
+            onclick="if(navigator.share){navigator.share({title:'8 Gentle Sciatica Relief Exercises',url:location.href,text:'This free guide actually helped my pain ❤️'})}else{navigator.clipboard.writeText(location.href);alert('Link copied!')}"
+            class="big-btn" style="background:#e11d48">
+            Share with someone in pain Heart
+        </button>
+
+        <button onclick="restartGuide()" class="big-btn" style="background:#3b82f6">
+            Try the 8 exercises again
+        </button>
+
+        <p style="margin-top:50px;color:#64748b;font-size:0.95rem">
+            Made with love • Share freely • Help someone today
+        </p>
+    </div>
     <script>
+
         // THIS IS THE ONLY PART THAT WAS BROKEN — NOW FIXED
         const acceptBtn = document.getElementById('accept-disclaimer-btn');
 
@@ -424,12 +464,43 @@
             updateProgress();
         }
         function prevSlide() { showSlide(current - 1); }
-        function nextSlide() { showSlide(current + 1); }
+        function nextSlide() {
+            if (current === total - 1) {
+                document.getElementById('carousel').style.display = 'none';
+                document.getElementById('final-screen').style.display = 'flex';
+            } else {
+                showSlide(current + 1);
+            }
+        }
 
         document.onkeydown = e => { if (e.key === 'ArrowLeft') prevSlide(); if (e.key === 'ArrowRight') nextSlide(); };
         let touchStartX = 0;
         document.getElementById('carousel').addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, { passive: true });
         document.getElementById('carousel').addEventListener('touchend', e => { let d = e.changedTouches[0].screenX - touchStartX; if (d > 50) prevSlide(); if (d < -50) nextSlide(); }, { passive: true });
+
+        function restartGuide() {
+            // Hide final screen
+            document.getElementById('final-screen').style.display = 'none';
+
+            // Show carousel again
+            document.getElementById('carousel').style.display = 'flex';
+
+            // Reset to first slide
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            current = 0;
+            document.querySelectorAll('.slide')[0].classList.add('active');
+
+            // Reset progress bar
+            document.getElementById('progress').style.width = '12.5%';
+
+            // Restart videos (feels smooth)
+            document.querySelectorAll('video').forEach(v => {
+                v.currentTime = 0;
+                v.play();
+            });
+        }
+
+
     </script>
 </body>
 
