@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8 Gentle Sciatica Relief Exercises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>8 Gentle Sciatica Relief Exercises (No Equipment, Doctor-Approved Stretches)</title>
     <meta name="description"
-        content="Follow along with these 8 proven exercises to relieve sciatica pain in minutes. No equipment needed.">
+        content="Free 8-exercise video guide to relieve sciatica pain fast. No equipment needed. Safe & proven moves.">
     <style>
         body {
             margin: 0;
@@ -14,29 +14,28 @@
             background: #0f172a;
             font-family: system-ui, -apple-system, sans-serif;
             color: #e2e8f0;
-            overflow-x: hidden
+            overflow: hidden
         }
 
         .carousel {
             width: 100vw;
-            max-width: none;
+            height: 100dvh;
             margin: 0;
             background: #0f172a;
-            min-height: 100vh;
             display: none;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            overflow: hidden
         }
 
         .slide {
+            width: 100%;
+            height: 100dvh;
             display: none;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 20px 15px 40px;
-            box-sizing: border-box;
-            min-height: 100vh;
+            justify-content: flex-start;
+            padding: 16px 15px 0;
+            box-sizing: border-box
         }
 
         .slide.active {
@@ -44,18 +43,20 @@
         }
 
         h2 {
-            font-size: 2.0rem;
-            margin: 5px 0 10px;
+            font-size: 2.1rem;
+            margin: 10px 0 6px;
             color: #60a5fa;
             text-align: center;
+            flex-shrink: 0
         }
 
         .details {
             max-width: 90%;
-            margin: 5px auto 25px;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            margin: 0 auto 12px;
+            font-size: 1.12rem;
+            line-height: 1.5;
             text-align: center;
+            flex-shrink: 0
         }
 
         .details strong {
@@ -65,18 +66,21 @@
         video {
             width: 100vw;
             max-width: 480px;
-            height: calc(100vh - 360px);
+            flex: 1;
+            min-height: 0;
             object-fit: cover;
             border-radius: 20px 20px 0 0;
             box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
-            background: #000;
+            background: #000
         }
 
         .nav-buttons {
-            margin-top: -24px;
+            margin: 12px 0 6px;
             display: flex;
             justify-content: center;
             gap: 32px;
+            flex-shrink: 0;
+            z-index: 10
         }
 
         .nav-btn {
@@ -87,10 +91,9 @@
             height: 62px;
             border-radius: 50%;
             font-size: 2rem;
-            /* this controls arrow size */
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(59, 130, 246, .5);
-            transition: all .2s;
+            transition: all .2s
         }
 
         .nav-btn:hover {
@@ -102,17 +105,73 @@
             transform: scale(0.95)
         }
 
-        @media (max-width:480px) {
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #60a5fa;
+            width: 12.5%;
+            transition: width .4s ease
+        }
+
+        footer {
+            padding: 20px;
+            background: #0f172a;
+            text-align: center;
+            font-size: 0.95rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100dvh
+        }
+
+        .share-btn {
+            background: #e11d48;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 15px
+        }
+
+        input[type=email] {
+            padding: 14px;
+            width: 78%;
+            max-width: 340px;
+            border-radius: 50px;
+            border: none;
+            margin: 10px 0;
+            font-size: 1rem
+        }
+
+        button[type=submit] {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer
+        }
+
+        @media(max-width:480px) {
             h2 {
-                font-size: 2.0rem
+                font-size: 1.9rem
             }
 
             .details {
                 font-size: 1.05rem
-            }
-
-            video {
-                height: calc(100vh - 240px)
             }
 
             .nav-btn {
@@ -125,192 +184,252 @@
 </head>
 
 <body>
-    <!-- START: STAND-ALONE LANDING + AGREEMENT -->
-    <div id="landing" style="min-height:100vh; background:#0f172a; color:#e2e8f0; 
-                        display:flex; flex-direction:column; justify-content:center; 
-                        align-items:center; padding:20px; text-align:center; 
-                        box-sizing:border-box;">
 
-        <h1 style="font-size:3rem; margin:20px 0; color:#60a5fa;">
-            8 Gentle Sciatica Relief Exercises
-        </h1>
+    <!-- PROGRESS BAR -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress"></div>
+    </div>
 
-        <p style="font-size:1.4rem; max-width:50%; line-height:1.7; margin:25px 0;">
-            Follow along with these proven moves to ease sciatica pain naturally.<br>
-            No equipment needed — just a few minutes a day.
-        </p>
-
-        <div style="background:#1e293b; border-left:4px solid #f87171; border-radius:12px; 
-              padding:20px; max-width:90%; margin:30px 0; font-size:1.05rem; line-height:1.7;">
-            <p style="margin:0 0 12px; color:#fca5a5; font-weight:600; text-align:left;">
-                Important Medical Disclaimer
+    <!-- DISCLAIMER -->
+    <div id="disclaimer-overlay"
+        style="min-height:100dvh;background:#0f172a;color:#e2e8f0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center">
+        <div style="max-width:600px;width:100%">
+            <h1 style="font-size:clamp(2rem,5vw,3rem);margin:20px 0;color:#60a5fa">8 Gentle Sciatica Relief Exercises
+            </h1>
+            <p style="font-size:clamp(1.1rem,3vw,1.4rem);max-width:90%;margin:25px auto">
+                Follow along with these proven moves to ease sciatica pain naturally.<br>No equipment needed — just a
+                few minutes a day.
             </p>
-            <p style="margin:0; color:#cbd5e1; text-align:left;">
-                This content is for informational purposes only and is <strong>not medical advice</strong>.<br><br>
-                Consult your doctor or physical therapist before starting any exercise program,
-                especially if you have sciatica, back pain, or any health condition.<br><br>
-                <strong style="color:#f87171;">Stop immediately if you feel any pain or discomfort.</strong>
+            <div
+                style="background:#1e293b;border-left:4px solid #f87171;border-radius:12px;padding:24px;margin:30px auto;text-align:left">
+                <p style="margin:0 0 16px;color:#fca5a5;font-weight:600;font-size:1.1rem">Important Medical Disclaimer
+                </p>
+                <ul style="margin:0;padding-left:20px;color:#cbd5e1">
+                    <li>This content is for informational purposes only and is <strong>not medical advice</strong>.</li>
+                    <li>Consult your doctor or physical therapist before starting any exercise program.</li>
+                    <li><strong style="color:#f87171">Stop immediately if you feel any pain or discomfort.</strong></li>
+                </ul>
+            </div>
+            <button id="accept-disclaimer-btn"
+                style="background:#3b82f6;color:white;border:none;padding:16px 48px;border-radius:50px;font-size:1.25rem;font-weight:600;cursor:pointer;box-shadow:0 10px 30px rgba(59,130,246,.5);margin-top:20px;transition:transform .2s">
+                I Understand & Agree
+            </button>
+            <p style="font-size:0.9rem;margin-top:30px;color:#64748b">By continuing you agree to the disclaimer above.
             </p>
         </div>
-
-        <button onclick="document.getElementById('landing').style.display='none';
-                   document.querySelector('.carousel').style.display='flex';" style="background:#3b82f6; color:white; border:none; padding:16px 48px; 
-                 border-radius:50px; font-size:1.25rem; font-weight:600; cursor:pointer;
-                 box-shadow:0 10px 30px rgba(59,130,246,.5); margin-top:20px;">
-            I Understand & Agree
-        </button>
-
-        <p style="font-size:0.9rem; margin-top:30px; color:#64748b;">
-            By continuing you agree to the disclaimer above.
-        </p>
     </div>
-    <!-- END: STAND-ALONE LANDING + AGREEMENT -->
 
-    <div class="carousel">
-
+    <!-- MAIN CAROUSEL -->
+    <div class="carousel" id="carousel">
+        <!-- 1. Pelvic Tilt -->
         <div class="slide active">
             <h2>1. Pelvic Tilt</h2>
-            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg"
+                aria-label="Man demonstrating pelvic tilt exercise">
                 <source src="media/1_Pelvic_tilt_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Pelvic Tilt: Lie on back and gently flatten lower back into floor"
+                    style="width:100%;max-width:480px;border-radius:20px">
+
             </video>
             <div class="details">
                 <p><strong>Beginner • 10–15 reps</strong><br>Lie on back → gently flatten lower back → release.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 2. Knee to Chest -->
         <div class="slide">
             <h2>2. Knee to Chest</h2>
-            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
+            <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg"
+                aria-label="Man performing knee to chest stretch">
                 <source src="media/2_Knee_to_chest_stretch_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg" alt="Knee to Chest: Pull one knee gently toward chest"
+                    alt="Knee to Chest stretch for sciatica relief: Pull one knee gently toward chest while lying on back"
+                    style="width:100%;max-width:480px;border-radius:20px">
             </video>
             <div class="details">
                 <p><strong>20–30s each side</strong><br>Gentle lumbar decompression + glute stretch.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 3. Supine Figure-4 -->
         <div class="slide">
             <h2>3. Supine Figure-4</h2>
             <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
                 <source src="media/3_Supine_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Supine Figure-4: Cross ankle over opposite knee and pull thigh toward chest"
+                    style="width:100%;max-width:480px;border-radius:20px">
             </video>
             <div class="details">
                 <p><strong>30–60s each side</strong><br>Targets the piriformis muscle directly.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 4. Child’s Pose -->
         <div class="slide">
             <h2>4. Child’s Pose</h2>
             <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
                 <source src="media/4_Child_pose_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Child’s Pose yoga stretch for lower back and sciatica pain relief"
+                    style="width:100%;max-width:480px;border-radius:20px">
+
             </video>
             <div class="details">
                 <p><strong>30–90s</strong><br>Spinal traction and deep relaxation.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 5. Cat-Cow -->
         <div class="slide">
             <h2>5. Cat-Cow</h2>
             <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
                 <source src="media/5_Cat_Cow_Stretch_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Cat-Cow spinal mobility exercise to reduce sciatica stiffness"
+                    style="width:100%;max-width:480px;border-radius:20px">
+
             </video>
             <div class="details">
                 <p><strong>8–10 breaths</strong><br>Improves spinal mobility.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 6. Glute Bridge -->
         <div class="slide">
             <h2>6. Glute Bridge</h2>
             <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
                 <source src="media/6_Glute_bridge_woman.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Glute Bridge exercise to strengthen glutes and support lower back"
+                    style="width:100%;max-width:480px;border-radius:20px">
+
             </video>
             <div class="details">
                 <p><strong>10–15 reps</strong><br>Strengthens glutes & core.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 7. Seated Spinal Twist -->
         <div class="slide">
             <h2>7. Seated Spinal Twist</h2>
             <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
                 <source src="media/7_Seated_Spinal_Twist_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Seated Spinal Twist for sciatica and lower back tension release"
+                    style="width:100%;max-width:480px;border-radius:20px">
             </video>
             <div class="details">
                 <p><strong>20–30s each side</strong><br>Releases lumbar tension.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
 
+        <!-- 8. Standing Hamstring Stretch -->
         <div class="slide">
             <h2>8. Standing Hamstring Stretch</h2>
             <video autoplay muted loop playsinline poster="https://files.catbox.moe/9f1g3t.jpg">
                 <source src="media/8_Hamstring-stretch_man.mp4" type="video/mp4">
+                <!-- SEO + ACCESSIBILITY ALT TEXT IS HERE -->
+                <img src="https://files.catbox.moe/9f1g3t.jpg"
+                    alt="Standing Hamstring Stretch to relieve sciatic nerve compression"
+                    style="width:100%;max-width:480px;border-radius:20px">
             </video>
             <div class="details">
                 <p><strong>20–30s each leg</strong><br>Lengthens tight hamstrings.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◄</button>
+                <button class="nav-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
                 <button class="nav-btn" onclick="nextSlide()" aria-label="Next">►</button>
             </div>
         </div>
-
     </div>
 
+    <!-- FINAL SCREEN -->
+    <footer id="final-screen">
+        <h2 style="color:#10b981">You completed all 8 exercises! Well done</h2>
+        <p style="max-width:90%;font-size:1.2rem">Want a printable PDF + 2 bonus exercises?<br>Drop your email (no spam
+            ever):</p>
+        <form action="https://formsubmit.co/your-real-email@example.com" method="POST"
+            style="display:flex;flex-direction:column;align-items:center;width:90%;max-width:400px;gap:10px">
+            <input type="email" name="email" placeholder="you@email.com" required>
+            <input type="hidden" name="_next" value="https://eduxvie.github.io/sciatica-relief-guide/thanks.html">
+            <button type="submit">Send Me the Free PDF</button>
+        </form>
+        <button class="share-btn"
+            onclick="navigator.share?navigator.share({title:'Free Sciatica Relief Guide',url:location.href,text:'This actually helped my pain'}):copy(location.href)">Share
+            with someone in pain (Heart)</button>
+    </footer>
+
     <script>
+        // THIS IS THE ONLY PART THAT WAS BROKEN — NOW FIXED
+        const acceptBtn = document.getElementById('accept-disclaimer-btn');
+
+        function acceptDisclaimer() {
+            document.getElementById('disclaimer-overlay').style.display = 'none';
+            document.getElementById('carousel').style.display = 'flex';
+            document.documentElement.style.overflow = 'hidden';
+            updateProgress();
+        }
+        document.getElementById('accept-disclaimer-btn').onclick = acceptDisclaimer;
+
         let current = 0;
         const slides = document.querySelectorAll('.slide');
+        const total = slides.length;
+        const progress = document.getElementById('progress');
 
+        function updateProgress() {
+            progress.style.width = ((current + 1) / total * 100) + '%';
+            if (current === total - 1) document.getElementById('final-screen').style.display = 'flex';
+        }
         function showSlide(n) {
             slides[current].classList.remove('active');
-            current = (n + slides.length) % slides.length;
+            current = (n + total) % total;
             slides[current].classList.add('active');
+            updateProgress();
         }
         function prevSlide() { showSlide(current - 1); }
         function nextSlide() { showSlide(current + 1); }
 
-        // Keyboard
-        document.onkeydown = e => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-        };
-
-        // Touch swipe
+        document.onkeydown = e => { if (e.key === 'ArrowLeft') prevSlide(); if (e.key === 'ArrowRight') nextSlide(); };
         let touchStartX = 0;
-        let touchEndX = 0;
-        document.querySelector('.carousel').addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        document.querySelector('.carousel').addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchEndX < touchStartX - 50) nextSlide();
-            if (touchEndX > touchStartX + 50) prevSlide();
-        }, { passive: true });
+        document.getElementById('carousel').addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, { passive: true });
+        document.getElementById('carousel').addEventListener('touchend', e => { let d = e.changedTouches[0].screenX - touchStartX; if (d > 50) prevSlide(); if (d < -50) nextSlide(); }, { passive: true });
     </script>
 </body>
 
