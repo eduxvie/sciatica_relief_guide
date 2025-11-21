@@ -400,38 +400,43 @@
         </div>
     </div>
 
-    <!-- FINAL SCREEN – SAME TEXT, SAME PERFECT SIZE -->
-    <div id="final-screen" style="
-    display:none; flex-direction:column; align-items:center; justify-content:center;
-    height:100dvh; padding:20px; background:#0f172a; text-align:center; box-sizing:border-box
-">
+    <!-- FINAL SCREEN – PERFECT SPACING (your exact text) -->
+    <div id="final-screen"
+        style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100dvh; padding:20px; background:#0f172a; text-align:center; box-sizing:border-box">
+        ">
         <h2 style="font-size:2.6rem;color:#10b981;margin:0 0 16px">You completed all 8 exercises!</h2>
-        <p style="font-size:1.35rem;max-width:90%;margin:16px 0;line-height:1.6">
+        <p style="font-size:1.35rem;max-width:90%;margin:16px 0 32px;line-height:1.6">
             Want a printable PDF + 2 bonus exercises?<br>
             <strong>Drop your email — zero spam, ever.</strong>
         </p>
 
         <!-- EMAIL FORM -->
         <form action="https://formsubmit.co/your-real-email@example.com" method="POST"
-            style="width:90%;max-width:400px;margin:30px 0">
+            style="width:90%;max-width:400px">
             <input type="email" name="email" placeholder="you@email.com" required
                 style="width:100%;padding:17px;border-radius:50px;border:none;font-size:1.2rem;margin-bottom:14px">
             <input type="hidden" name="_next" value="thanks.html">
             <button type="submit" class="big-btn">Send Me the Free PDF</button>
         </form>
+        <!-- SMALL gap to Share button (only 20px) -->
+        <div style="height:20px"></div>
 
-        <!-- YOUR ORIGINAL TEXT – ONLY SIZE/STYLE FIXED -->
+        <!-- TIGHTER gap to Share button -->
         <button
             onclick="if(navigator.share){navigator.share({title:'8 Gentle Sciatica Relief Exercises',url:location.href,text:'This free guide actually helped my pain ❤️'})}else{navigator.clipboard.writeText(location.href);alert('Link copied!')}"
-            class="big-btn" style="background:#e11d48">
+            class="big-btn" style="background:#e11d48; margin-top:18px !important">
             Share with someone in pain Heart
         </button>
 
-        <button onclick="restartGuide()" class="big-btn" style="background:#3b82f6">
+        <!-- LARGE breathing gap before Try Again (70px) -->
+        <div style="height:70px"></div>
+
+        <!-- BIGGER, intentional gap before "Try again" -->
+        <button onclick="restartGuide()" class="big-btn" style="background:#3b82f6; margin-top:48px !important">
             Try the 8 exercises again
         </button>
 
-        <p style="margin-top:50px;color:#64748b;font-size:0.95rem">
+        <p style="margin-top:60px;color:#64748b;font-size:0.95rem">
             Made with love • Share freely • Help someone today
         </p>
     </div>
